@@ -241,6 +241,7 @@ the GB-Link Discord server:
 When asking about a hardware problem, please include the board revision
 (v1.0 or v1.4), the console model (GB / GBC / GBA), the cable type and a photo
 of the board. Those four details solve most issues in the first reply.
+
 ## Quick Start
 
 1. Manufacture and assemble the PCB using the files in this repository, or use
