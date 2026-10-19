@@ -2,7 +2,11 @@
 
 **An open-source USB adapter for the Game Boy Link Cable.**
 
-![GB-LINK-USB top view](extras/gb-link-usb-top.png)
+| Top view — v1.4 | Bottom view — v1.4 |
+| --- | --- |
+| ![GB-LINK-USB v1.4 top view](extras/gb-link-usb-top.png) | ![GB-LINK-USB v1.4 bottom view](extras/gb-link-usb-bot.png) |
+
+*The renders show the current **v1.4** board; the bottom silkscreen reads `GB-Link HW Rev 1.4` with date `20261007`.*
 
 GB-LINK-USB is an RP2040-based hardware adapter that connects original Nintendo
 Game Boy, Game Boy Color, and Game Boy Advance systems to a computer over USB.
@@ -13,6 +17,12 @@ connectivity and community-built tools to original Game Boy hardware.
 This hardware was developed with reference to the
 [GB-Link-USB-DIY](https://github.com/GB-Link/GB-Link-USB-DIY) project and is
 designed to be compatible with the GBLink firmware and its web-based clients.
+
+> [!IMPORTANT]
+> The board documented here is hardware **v1.4**. It works with **Game Boy Color
+> and Game Boy Advance** (and the original Game Boy) over the Link cable, and it
+> adapts the Link-interface power automatically: there is no voltage-selection
+> jumper, DIP switch or mechanical switch anywhere on the board.
 
 > [!NOTE]
 > GB-LINK-USB is the hardware interface. Available features depend on the
@@ -70,8 +80,10 @@ between the GBA and the browser client.
 - Integrated RP2040 microcontroller
 - USB Type-C connection
 - Game Boy Link interface
-- Bidirectional level translation on the Link lines to the console
-- Firmware-controlled 3.3 V and 5 V Link-interface reference voltage
+- Works with Game Boy Color and Game Boy Advance (and the original Game Boy)
+- Bidirectional level translation on all Link lines, including the level-shifted pin 1 line added in v1.4
+- Automatic Link-interface power: an on-board TPS2116 power mux selects between the USB 5 V rail and the 3.3 V rail by itself — no jumper, DIP switch or mechanical voltage switch
+- Firmware-controlled 3.3 V and 5 V Link-interface reference voltage (no hardware toggle)
 - WS2812B RGB status indicator
 - BOOTSEL firmware-update support
 - SWD programming and debugging connection
@@ -122,6 +134,11 @@ Practical effect: the Link interface no longer depends on the console or cable
 delivering power on pin 1, and the console-facing bus runs at 3.3 V or 5 V
 depending on the GPIO11/GPIO12 setting instead of always following the console.
 Firmware has to drive GPIO11 and GPIO12 for the selection to take effect.
+
+The source selection itself is automatic and needs no user action: the board
+carries no voltage-select jumper, DIP switch or mechanical switch, so a single
+board covers both the Game Boy Color and the Game Boy Advance without
+reconfiguration.
 
 ### 2. Link connector pin 1
 
@@ -254,8 +271,8 @@ Always confirm the cable selection in the client before starting a link mode.
 |   `-- GB-LINK-USB-V1.0-20260827.zip
 |                                Manufacturing package for the v1.0 board
 |-- extras/
-|   |-- gb-link-usb-top.png      Top-side board render
-|   |-- gb-link-usb-bot.png      Bottom-side board render
+|   |-- gb-link-usb-top.png      Top-side render of the v1.4 board
+|   |-- gb-link-usb-bot.png      Bottom-side render of the v1.4 board
 |   |-- gbc.jpg                  Game Boy Printer emulation test
 |   |-- gba1.jpg                 GBA multiboot test
 |   `-- gba2.jpg                 GBA cartridge-data transfer test
