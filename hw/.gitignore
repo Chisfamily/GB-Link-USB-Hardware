@@ -1,0 +1,4 @@
+# KiCad transient and local files
+~*.lck
+*.kicad_prl
+*-backups/
