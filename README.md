@@ -231,6 +231,16 @@ instructions:
 - [GB-Link Launcher](https://launcher.gblink.io/)
 - [GBLink-Firmware releases](https://github.com/GB-Link/GBLink-Firmware/releases)
 
+## Community
+
+Questions, build photos, firmware tips and community-made tools are discussed on
+the GB-Link Discord server:
+
+- **Discord:** <https://discord.gg/2MPprnMmg>
+
+When asking about a hardware problem, please include the board revision
+(v1.0 or v1.4), the console model (GB / GBC / GBA), the cable type and a photo
+of the board. Those four details solve most issues in the first reply.
 ## Quick Start
 
 1. Manufacture and assemble the PCB using the files in this repository, or use
